@@ -5,7 +5,7 @@
 
 Name: bitlbee-facebook
 Version: %{_version}.b_%{shorthash}
-Release: 0
+Release: 1
 Summary: The Facebook protocol plugin for bitlbee. This plugin uses the Facebook Mobile API.
 
 BuildRequires: bitlbee-devel autoconf automake libtool json-glib-devel zlib-devel
@@ -34,9 +34,12 @@ make DESTDIR=$RPM_BUILD_ROOT install
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/bitlbee/facebook.la
-/usr/lib64/bitlbee/facebook.so
+%{_libdir}/bitlbee/facebook.la
+%{_libdir}/bitlbee/facebook.so
 
 %changelog
+* Wed Jan 13 2016 RJ Bergeron <rbergero@gmail.com>
+- fix hardcoded library dir in spec
+
 * Thu Sep 24 2015 RJ Bergeron <rbergero@gmail.com>
 - initial packaging
