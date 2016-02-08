@@ -1,11 +1,7 @@
-%global _version 0
-
-%global hash e9b15f94f02a0445dbd493244af5d47ec7faf80f
-%global shorthash %(bash -c 'c=%{hash}; echo ${c:0:7}')
 %global bbver %(rpm -q --queryformat='%{version}-%{release}' bitlbee-devel)
 
 Name: bitlbee-facebook
-Version: %{_version}.b_%{shorthash}
+Version: 1.0.0
 Release: 1
 Summary: The Facebook protocol plugin for bitlbee. This plugin uses the Facebook Mobile API.
 Requires: bitlbee = %{bbver}
@@ -14,7 +10,7 @@ BuildRequires: bitlbee-devel autoconf automake libtool json-glib-devel zlib-deve
 
 License: GPLv2
 URL: https://wiki.bitlbee.org/HowtoFacebookMQTT
-Source0: https://github.com/jgeboski/%{name}/archive/${hash}.tar.gz#/%{name}-%{shorthash}.tar.gz
+Source0: https://github.com/jgeboski/%{name}/archive/v1.0.0.tar.gz#/%{name}-%{version}.tar.gz
 
 %description
 As an alternative to the now broken XMPP service provided by
@@ -25,7 +21,7 @@ It also happens to work much better than the XMPP service ever did, and
 supports groupchats. 
 
 %prep
-%setup -qn %{name}-%{hash}
+%setup -qn %{name}-%{version}
 
 %build
 ./autogen.sh
@@ -40,6 +36,9 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %{_libdir}/bitlbee/facebook.so
 
 %changelog
+* Sun Feb  7 2016 RJ Bergeron <rbergero@gmail.com>
+- upgrade (effectively) to 1.0.0 release
+
 * Sun Feb  7 2016 RJ Bergeron <rbergero@gmail.com>
 - require matching bitlbee version to what built it
 
