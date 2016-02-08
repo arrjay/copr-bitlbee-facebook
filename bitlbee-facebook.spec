@@ -1,6 +1,6 @@
 %global _version 0
 
-%global hash ad7193f7f5eaf1164ecf6cbab1989f75d9f35fb9
+%global hash e9b15f94f02a0445dbd493244af5d47ec7faf80f
 %global shorthash %(bash -c 'c=%{hash}; echo ${c:0:7}')
 
 Name: bitlbee-facebook
@@ -39,6 +39,9 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %{_libdir}/bitlbee/facebook.so
 
 %changelog
+* Sun Feb  7 2016 RJ Bergeron <rbergero@gmail.com>
+- update to e9b15f94f02a0445dbd493244af5d47ec7faf80f
+
 * Wed Jan 13 2016 RJ Bergeron <rbergero@gmail.com>
 - update to ad7193f7f5eaf1164ecf6cbab1989f75d9f35fb9
 
