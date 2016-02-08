@@ -2,12 +2,13 @@
 
 %global hash e9b15f94f02a0445dbd493244af5d47ec7faf80f
 %global shorthash %(bash -c 'c=%{hash}; echo ${c:0:7}')
+%global bbver %(rpm -q --queryformat='%{version}-%{release}' bitlbee-devel)
 
 Name: bitlbee-facebook
 Version: %{_version}.b_%{shorthash}
-Release: 0
+Release: 1
 Summary: The Facebook protocol plugin for bitlbee. This plugin uses the Facebook Mobile API.
-Requires: bitlbee
+Requires: bitlbee = %{bbver}
 
 BuildRequires: bitlbee-devel autoconf automake libtool json-glib-devel zlib-devel
 
@@ -39,6 +40,9 @@ make DESTDIR=$RPM_BUILD_ROOT install
 %{_libdir}/bitlbee/facebook.so
 
 %changelog
+* Sun Feb  7 2016 RJ Bergeron <rbergero@gmail.com>
+- require matching bitlbee version to what built it
+
 * Sun Feb  7 2016 RJ Bergeron <rbergero@gmail.com>
 - update to e9b15f94f02a0445dbd493244af5d47ec7faf80f
 
