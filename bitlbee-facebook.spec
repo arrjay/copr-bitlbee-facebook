@@ -7,6 +7,7 @@ Name: bitlbee-facebook
 Version: %{_version}.b_%{shorthash}
 Release: 0
 Summary: The Facebook protocol plugin for bitlbee. This plugin uses the Facebook Mobile API.
+Requires: bitlbee
 
 BuildRequires: bitlbee-devel autoconf automake libtool json-glib-devel zlib-devel
 
@@ -15,7 +16,7 @@ URL: https://wiki.bitlbee.org/HowtoFacebookMQTT
 Source0: https://github.com/jgeboski/%{name}/archive/${hash}.tar.gz#/%{name}-%{shorthash}.tar.gz
 
 %description
-As an alternative to the now (mostly-)defunct XMPP service provided by
+As an alternative to the now broken XMPP service provided by
 facebook, jgeboski (who also wrote bitlbee-steam) made a new plugin based
 on the facebook messenger mobile client (which uses a protocol called MQTT)
 
