@@ -38,4 +38,6 @@ git --git-dir="${UPSTREAM_GIT}" archive --prefix="bitlbee-facebook-${THEIR_HASH}
 # pack it
 rpmbuild -bs "${SPECDIR}"/bitlbee-facebook.spec
 
+# submit for build
+# copr-cli build bitlbee-facebook-mqtt ~/rpmbuild/SRPMS/bitlbee-facebook*.src.rpm
 fi
